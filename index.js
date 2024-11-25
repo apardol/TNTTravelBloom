@@ -14,11 +14,40 @@ function searchCondition() {
         .then(data => {
 
             if (inputSearch === 'country') {
+                resultDiv.innerHTML += `<div class="destination">`;
                 resultDiv.innerHTML += `<img src="${data.countries[0].cities[0].imageUrl}" alt="hjh">`;
                 resultDiv.innerHTML += `<h2>${data.countries[0].cities[0].name}</h2>`;
 
                 resultDiv.innerHTML += `<p> ${data.countries[0].cities[0].description}</p>`;
                 resultDiv.innerHTML += `<button>Visit</button>`;
+                resultDiv.innerHTML += `</div>`;
+
+                resultDiv.innerHTML += `<div class="destination">`;
+                resultDiv.innerHTML += `<img src="${data.countries[1].cities[0].imageUrl}" alt="hjh">`;
+                resultDiv.innerHTML += `<h2>${data.countries[1].cities[0].name}</h2>`;
+
+                resultDiv.innerHTML += `<p> ${data.countries[1].cities[0].description}</p>`;
+                resultDiv.innerHTML += `<button>Visit</button>`;
+                resultDiv.innerHTML += `</div>`;
+
+            }
+
+            if (inputSearch === 'temple') {
+                resultDiv.innerHTML += `<div class="destination">`;
+                resultDiv.innerHTML += `<img src="${data.temples[0].cities[0].imageUrl}" alt="hjh">`;
+                resultDiv.innerHTML += `<h2>${data.countries[0].cities[0].name}</h2>`;
+
+                resultDiv.innerHTML += `<p> ${data.countries[0].cities[0].description}</p>`;
+                resultDiv.innerHTML += `<button>Visit</button>`;
+                resultDiv.innerHTML += `</div>`;
+
+                resultDiv.innerHTML += `<div class="destination">`;
+                resultDiv.innerHTML += `<img src="${data.countries[1].cities[0].imageUrl}" alt="hjh">`;
+                resultDiv.innerHTML += `<h2>${data.countries[1].cities[0].name}</h2>`;
+
+                resultDiv.innerHTML += `<p> ${data.countries[1].cities[0].description}</p>`;
+                resultDiv.innerHTML += `<button>Visit</button>`;
+                resultDiv.innerHTML += `</div>`;
 
             }
 
