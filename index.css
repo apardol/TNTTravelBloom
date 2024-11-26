@@ -113,8 +113,12 @@ i {
     text-transform: uppercase;
 }
 
-#home {
+#home, #about, #contact {
     padding-left: 100px;
+    padding-right: 50px;
+}
+
+#home {
     width: 1000px;
 }
 
@@ -138,4 +142,24 @@ i {
 
 #recommendations .destination img {
     width: 380px;
+}
+
+#about p {
+    color: 666;
+    padding-bottom: 10px;
+}
+
+.objective {
+    background-color: black;
+    opacity: 0.5;
+    color: white;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+#team {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 700px
 }
