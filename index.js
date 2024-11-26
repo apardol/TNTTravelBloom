@@ -7,66 +7,67 @@ function getRandomInt(max) {
 function searchCondition() {
     const inputSearch = document.getElementById('inputSearch').value.toLowerCase().trim();
     const resultDiv = document.getElementById('recommendations');
-    resultDiv.innerHTML = '';
+    let html = '';
 
     fetch('api.json')
         .then(response => response.json())
         .then(data => {
 
             if (inputSearch === 'country') {
-                resultDiv.innerHTML += `<div class="destination">`;
-                resultDiv.innerHTML += `<img src="${data.countries[0].cities[0].imageUrl}" alt="hjh">`;
-                resultDiv.innerHTML += `<h2>${data.countries[0].cities[0].name}</h2>`;
+                html += `<div class="destination">`;
+                html += `<img src="${data.countries[0].cities[0].imageUrl}" alt="hjh" />`;
+                html += `<h2>${data.countries[0].cities[0].name}</h2>`;
 
-                resultDiv.innerHTML += `<p> ${data.countries[0].cities[0].description}</p>`;
-                resultDiv.innerHTML += `<button>Visit</button>`;
-                resultDiv.innerHTML += `</div>`;
+                html += `<p> ${data.countries[0].cities[0].description}</p>`;
+                html += `<button>Visit</button>`;
+                html += `</div>`;
 
-                resultDiv.innerHTML += `<div class="destination">`;
-                resultDiv.innerHTML += `<img src="${data.countries[1].cities[0].imageUrl}" alt="hjh">`;
-                resultDiv.innerHTML += `<h2>${data.countries[1].cities[0].name}</h2>`;
+                html += `<div class="destination">`;
+                html += `<img src="${data.countries[1].cities[0].imageUrl}" alt="hjh" />`;
+                html += `<h2>${data.countries[1].cities[0].name}</h2>`;
 
-                resultDiv.innerHTML += `<p> ${data.countries[1].cities[0].description}</p>`;
-                resultDiv.innerHTML += `<button>Visit</button>`;
-                resultDiv.innerHTML += `</div>`;
-
+                html += `<p> ${data.countries[1].cities[0].description}</p>`;
+                html += `<button>Visit</button>`;
+                html += `</div>`;
             }
 
             if (inputSearch === 'temple') {
-                resultDiv.innerHTML += `<div class="destination">`;
-                resultDiv.innerHTML += `<img src="${data.temples[0].cities[0].imageUrl}" alt="hjh">`;
-                resultDiv.innerHTML += `<h2>${data.countries[0].cities[0].name}</h2>`;
+                html += `<div class="destination">`;
+                html += `<img src="${data.temples[0].imageUrl}" alt="hjh" />`;
+                html += `<h2>${data.temples[0].name}</h2>`;
 
-                resultDiv.innerHTML += `<p> ${data.countries[0].cities[0].description}</p>`;
-                resultDiv.innerHTML += `<button>Visit</button>`;
-                resultDiv.innerHTML += `</div>`;
+                html += `<p> ${data.temples[0].description}</p>`;
+                html += `<button>Visit</button>`;
+                html += `</div>`;
 
-                resultDiv.innerHTML += `<div class="destination">`;
-                resultDiv.innerHTML += `<img src="${data.countries[1].cities[0].imageUrl}" alt="hjh">`;
-                resultDiv.innerHTML += `<h2>${data.countries[1].cities[0].name}</h2>`;
+                html += `<div class="destination">`;
+                html += `<img src="${data.temples[1].imageUrl}" alt="hjh" />`;
+                html += `<h2>${data.temples[1].name}</h2>`;
 
-                resultDiv.innerHTML += `<p> ${data.countries[1].cities[0].description}</p>`;
-                resultDiv.innerHTML += `<button>Visit</button>`;
-                resultDiv.innerHTML += `</div>`;
-
+                html += `<p> ${data.temples[1].description}</p>`;
+                html += `<button>Visit</button>`;
+                html += `</div>`;
             }
 
-            // const condition = data.conditions.find(item => item.name.toLowerCase() === inputSearch);
+            if (inputSearch === 'beach') {
+                html += `<div class="destination">`;
+                html += `<img src="${data.beaches[0].imageUrl}" alt="hjh" />`;
+                html += `<h2>${data.beaches[0].name}</h2>`;
 
-            // if (condition) {
-            //     const symptoms = condition.symptoms.join(', ');
-            //     const prevention = condition.prevention.join(', ');
-            //     const treatment = condition.treatment;
+                html += `<p> ${data.beaches[0].description}</p>`;
+                html += `<button>Visit</button>`;
+                html += `</div>`;
 
-            //     resultDiv.innerHTML += `<h2>${condition.name}</h2>`;
-            //     resultDiv.innerHTML += `<img src="${condition.imagesrc}" alt="hjh">`;
+                html += `<div class="destination">`;
+                html += `<img src="${data.beaches[1].imageUrl}" alt="hjh" />`;
+                html += `<h2>${data.beaches[1].name}</h2>`;
 
-            //     resultDiv.innerHTML += `<p><strong>Symptoms:</strong> ${symptoms}</p>`;
-            //     resultDiv.innerHTML += `<p><strong>Prevention:</strong> ${prevention}</p>`;
-            //     resultDiv.innerHTML += `<p><strong>Treatment:</strong> ${treatment}</p>`;
-            // } else {
-            //     resultDiv.innerHTML = 'Condition not found.';
-            // }
+                html += `<p> ${data.beaches[1].description}</p>`;
+                html += `<button>Visit</button>`;
+                html += `</div>`;
+            }
+
+            resultDiv.innerHTML = html;
         })
         .catch(error => {
             console.error('Error:', error);
