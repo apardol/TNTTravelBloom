@@ -127,7 +127,7 @@ i {
     padding-bottom: 30px;
 }
 
-#recommendations {
+#recommendations, #form {
     padding-left: 70px;
 }
 
@@ -191,4 +191,26 @@ i {
 
 .user-info h4 {
     padding-bottom: 20px;
+}
+
+#form {
+    background-color: black;
+    opacity: 0.6;
+    padding: 20px;
+    border-radius: 15px;
+    color: white;
+    width: 50%;
+}
+
+.form-control {
+
+}
+
+label {
+    display: inline-block;
+    margin-bottom: .5rem;
+}
+
+#form input, #form textarea {
+    width: 100%;
 }

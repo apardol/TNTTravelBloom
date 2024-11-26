@@ -1,12 +1,13 @@
 const btnSearch = document.getElementById('btnSearch');
+const btnReset = document.getElementById('btnReset');
+const resultDiv = document.getElementById('recommendations');
 
 function getRandomInt(max) {
     return Math.floor(Math.random() * max);
 }
 
 function searchCondition() {
-    const inputSearch = document.getElementById('inputSearch').value.toLowerCase().trim();
-    const resultDiv = document.getElementById('recommendations');
+    const inputSearch = document.getElementById('inputSearch').value.toLowerCase().trim().toLowerCase();
     let html = '';
 
     fetch('api.json')
@@ -75,4 +76,10 @@ function searchCondition() {
         });
 }
 
+function resetFormAndDestinationsResults() {
+    document.getElementById('inputSearch').value = "";
+    resultDiv.innerHTML = "";
+}
+
 btnSearch.addEventListener('click', searchCondition);
+btnReset.addEventListener('click', resetFormAndDestinationsResults);
