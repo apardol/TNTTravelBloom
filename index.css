@@ -151,7 +151,7 @@ i {
 
 .objective {
     background-color: black;
-    opacity: 0.5;
+    opacity: 0.4;
     color: white;
     padding: 30px;
     border-radius: 10px;
@@ -161,5 +161,34 @@ i {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 700px
+    padding-top:40px;
+    padding-left: 50px;
+}
+
+#team h2 {
+    font-size: 48px;
+}
+
+.member {
+    background-color: black;
+    opacity: 0.4;
+    color: white;
+    display: flex;
+    align-items: normal;     
+    justify-content: left;
+    margin: 30px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.member .user-icon i {
+    color: white;
+}
+
+.member .user-info {
+    padding: 0px 25px;
+}
+
+.user-info h4 {
+    padding-bottom: 20px;
 }
